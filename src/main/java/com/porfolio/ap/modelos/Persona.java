@@ -18,14 +18,26 @@ public class Persona implements Serializable {
     private String descripcion;
 
     private String fotoPerfil;
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "ideEdu")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "idEdu")
     private List<Educacion> educacionList;
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "ideExp")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "idExp")
     private List<Experiencia> experienciaList;
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "ideSkills")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "idSkills")
     private List<Skills> skillsList;
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "ideProyec")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "idProyec")
     private List<Proyectos> proyectosList;
+
+    public Persona() {
+    }
+
+    public Persona(Long id, String nombre, String apellido, String titulo, String descripcion, String fotoPerfil) {
+        this.id = id;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.titulo = titulo;
+        this.descripcion = descripcion;
+        this.fotoPerfil = fotoPerfil;
+    }
 
     public Long getId() {
         return id;
@@ -73,16 +85,5 @@ public class Persona implements Serializable {
 
     public void setFotoPerfil(String fotoPerfil) {
         this.fotoPerfil = fotoPerfil;
-    }
-
-    public Persona(Long id, String nombre, String apellido, String titulo, String descripcion, String fotoPerfil) {
-        this.id = id;
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.titulo = titulo;
-        this.descripcion = descripcion;
-        this.fotoPerfil = fotoPerfil;
-
-
     }
 }
