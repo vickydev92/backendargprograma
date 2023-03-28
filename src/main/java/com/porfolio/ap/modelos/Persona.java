@@ -2,30 +2,19 @@ package com.porfolio.ap.modelos;
 
 import jakarta.persistence.*;
 
-import java.io.Serializable;
-import java.util.List;
-
 @Entity
-public class Persona implements Serializable {
+@Table(name="Personas")
+public class Persona {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(nullable = false,updatable = false)
-
+    @Column(nullable = false, updatable = false)
     private Long id;
+
     private String nombre;
     private String apellido;
     private String titulo;
     private String descripcion;
-
     private String fotoPerfil;
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "idEdu")
-    private List<Educacion> educacionList;
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "idExp")
-    private List<Experiencia> experienciaList;
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "idSkills")
-    private List<Skills> skillsList;
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "idProyec")
-    private List<Proyectos> proyectosList;
 
     public Persona() {
     }
