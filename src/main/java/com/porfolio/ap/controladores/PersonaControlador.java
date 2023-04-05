@@ -11,6 +11,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("api/personas")
+@CrossOrigin(origins = "http://localhost:4200")
 public class PersonaControlador {
     @Autowired
     private IPersonaServicio personaServicio;

@@ -13,7 +13,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("api/skills")
-
+@CrossOrigin(origins = "http://localhost:4200")
 public class SkillsControlador {
     @Autowired
     private ISkillsServicio skillsServicio;

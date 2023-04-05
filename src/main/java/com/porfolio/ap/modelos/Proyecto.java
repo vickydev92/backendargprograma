@@ -16,16 +16,19 @@ public class Proyecto {
     private String descripcion;
     private String imagen;
 
+    private String enlace;
+
     public Proyecto() {
     }
 
-    public Proyecto(Long id, String titulo, int fechaIni, int fechaFin, String descripcion, String imagen) {
+    public Proyecto(Long id, String titulo, int fechaIni, int fechaFin, String descripcion, String imagen, String enlace) {
         this.id = id;
         this.titulo = titulo;
         this.fechaIni = fechaIni;
         this.fechaFin = fechaFin;
         this.descripcion = descripcion;
         this.imagen = imagen;
+        this.enlace = enlace;
     }
 
     public Long getId() {
@@ -72,7 +75,17 @@ public class Proyecto {
         return imagen;
     }
 
+    public String getEnlace() {
+        return enlace;
+    }
+
+    public void setEnlace(String enlace) {
+        this.enlace = enlace;
+    }
+
     public void setImagen(String imagen) {
         this.imagen = imagen;
+
+
     }
 }

@@ -12,7 +12,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("api/proyectos")
-
+@CrossOrigin(origins = "http://localhost:4200")
 public class ProyectoControlador {
     @Autowired
     private IProyectoServicio proyectoServicio;
