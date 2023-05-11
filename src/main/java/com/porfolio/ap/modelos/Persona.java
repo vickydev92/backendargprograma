@@ -15,17 +15,27 @@ public class Persona {
     private String titulo;
     private String descripcion;
     private String fotoPerfil;
+    private String localidad;
 
     public Persona() {
     }
 
-    public Persona(Long id, String nombre, String apellido, String titulo, String descripcion, String fotoPerfil) {
+    public Persona(Long id, String nombre, String apellido, String titulo, String descripcion, String fotoPerfil, String localidad) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.fotoPerfil = fotoPerfil;
+        this.localidad = localidad;
+    }
+
+    public String getLocalidad() {
+        return localidad;
+    }
+
+    public void setLocalidad(String localidad) {
+        this.localidad = localidad;
     }
 
     public Long getId() {

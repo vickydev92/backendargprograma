@@ -24,7 +24,7 @@ public class Proyecto {
     public Proyecto(Long id, String titulo, int fechaIni, int fechaFin, String descripcion, String imagen, String enlace) {
         this.id = id;
         this.titulo = titulo;
-        this.fechaIni = fechaIni;
+        this.fechaIni = fechaIni;  
         this.fechaFin = fechaFin;
         this.descripcion = descripcion;
         this.imagen = imagen;

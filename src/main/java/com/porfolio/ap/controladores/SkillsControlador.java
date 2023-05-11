@@ -1,8 +1,7 @@
 package com.porfolio.ap.controladores;
 
-import com.porfolio.ap.modelos.Proyecto;
+
 import com.porfolio.ap.modelos.Skills;
-import com.porfolio.ap.servicios.IProyectoServicio;
 import com.porfolio.ap.servicios.ISkillsServicio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -13,7 +12,6 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("api/skills")
-@CrossOrigin(origins = "http://localhost:4200")
 public class SkillsControlador {
     @Autowired
     private ISkillsServicio skillsServicio;
@@ -35,7 +33,7 @@ public class SkillsControlador {
     }
     @PutMapping("/{id}")
     public ResponseEntity<?> editarSkills(@PathVariable Long id, @RequestBody Skills skills){
-        Optional<Proyecto> oSkills = skillsServicio.buscarSkills(id);
+        Optional<Skills> oSkills = skillsServicio.buscarSkills(id);
         if (oSkills.isPresent()) {
             return ResponseEntity.status(HttpStatus.ACCEPTED).body(skillsServicio.crearSkills(skills));
         }
